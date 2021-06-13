@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Esraa_Store.Models.Featured>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-dark">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.featuredImg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.featuredTilte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Like)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="~/FeaturedImg/@item.featuredImg" class="rounded-circle" width="40" height="40" asp-append-version="true" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.featuredTilte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Like)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FeaturedId" class="btn btn-primary">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FeaturedId" class="btn btn-info">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FeaturedId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

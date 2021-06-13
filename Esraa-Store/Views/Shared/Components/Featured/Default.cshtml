@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Featured>
+
+
+
+    @foreach (var featured in Model)
+    {
+<div class="col-lg-3">
+
+
+
+
+    <div class="product-item">
+
+        <div class="product-title">
+            <a href="#">@featured.featuredTilte</a>
+            <div class="ratting">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+
+        </div>
+        <div class="product-image">
+            <a>
+                <img src="~/FeaturedImg/@featured.featuredImg" style="height:450px" alt="Product Image">
+            </a>
+            <div class="product-action">
+                
+                    <a asp-controller="Cart" asp-action="Buy" asp-route-id="@featured.FeaturedId"><i class="fa fa-cart-plus"></i></a>
+                    <a asp-action="Like" asp-controller="Home" asp-route-id="@featured.FeaturedId" i>@featured.Like<i class="fa fa-heart"></i></a>
+                    <a href="#"><i class="fa fa-search"></i></a>
+          
+            </div>
+        </div>
+        <div class="product-price">
+            <h3><span>$</span>@featured.price</h3>
+            <a class="btn" asp-controller="cart" asp-action="buy" asp-route-id="@featured.FeaturedId"><i class="fa fa-shopping-cart"></i>Buy Now</a>
+        </div>
+    </div>
+
+</div>
+
+    }
+

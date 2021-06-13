@@ -1,0 +1,128 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<section>
+    <div class="banner-main">
+        <img src="~/images/banner2.jpg" alt="#" />
+        <div class="container">
+            <div class="text-bg">
+                <h1><br><strong class="text-white"> Give Your Life A New Style! </strong></h1>
+
+                <div class="container">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br />
+<br />
+
+<!-- Feature Start-->
+<div class="feature">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="titlepage">
+                    <h2>Some Feature for Esraa Store</h2>
+                    <p>
+                        Success isn't always about greatness. It's about consistency. Consistent
+                        hard work leads to success. Greatness will come.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fab fa-cc-mastercard"></i>
+                    <h2>Secure Payment</h2>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fa fa-truck"></i>
+                    <h2>Worldwide Delivery</h2>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fas fa-sync-alt"></i>
+                    <h2>90 Days Return</h2>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fa fa-comments"></i>
+                    <h2>24/7 Support</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<!-- Feature End-->
+<!-- Featured Product Start -->
+<div class="featured-product product">
+    <div class="container-fluid">
+        <div class="section-header">
+            <h1>Featured Product</h1>
+        </div>
+
+        <div class="row align-items-center  product-slider product-slider-4 ">
+            @await Component.InvokeAsync("Featured")
+
+
+        </div>>
+    </div>
+    <!-- Featured Product End -->
+    <!-- Amazing -->
+    <div class="amazing">
+        <div class="container">
+
+
+
+            @await Component.InvokeAsync("Exclusive")
+        </div>
+    </div>
+
+
+    <!-- end Amazing -->
+    <!-- Recent Product Start -->
+    <div class="recent-product product">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h1>Recent Product</h1>
+            </div>
+            <div class="row align-items-center  product-slider product-slider-4">
+                @await Component.InvokeAsync("LastestPro")
+            </div>
+        </div>
+    </div>
+    <!-- Recent Product End -->
+    <!-- our blog -->
+    <div id="blog" class="blog">
+        <div class="container">
+
+            <div class="titlepage">
+
+                <h2>Team Members</h2>
+            </div>
+            <br />
+            <div class="row">
+                @await Component.InvokeAsync("Team")
+
+            </div>
+        </div>
+
+    </div>
+    <!-- end our blog -->

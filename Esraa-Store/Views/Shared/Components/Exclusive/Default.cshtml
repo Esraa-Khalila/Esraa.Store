@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Exclusive>
+    
+        @foreach (var exc in Model)
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="amazing-box">
+                        <img src="~/ExclusiveImg/@exc.exclusiveImg" width="400" height="50" class="p-5" />
+                        <h2> @exc.exclusiveTilte</h2>
+                        <p class="text-white  font-weight-bold">
+
+                            @exc.exclusiveDec
+                            
+                        </p>
+
+                        <a href="#">Buy Now</a><a href="#">Get More</a>
+                    </div>
+                </div>
+            </div>
+        }
+        

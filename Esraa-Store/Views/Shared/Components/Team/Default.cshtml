@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Team>
+  
+        @foreach (var Team in Model)
+        {
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+                <div class="blog-box">
+                    <figure>
+                        <img src="~/TeamImg/@Team.Image"style="height:370px; width:700px" class="col-8" alt="#" />
+                        <span>@Team.dateTime.ToShortDateString()</span>
+                    </figure>
+
+                    <h3> Name : @Team.Name</h3>
+                    <h3> Title Job : @Team.TitleJob</h3>
+                </div>
+            </div>
+
+
+        }

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Esraa_Store.Models.Team>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-warning">Create New</a>
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TitleJob)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody >
+@foreach (var item in Model) {
+        <tr>
+            <td style="font-size:large;font-weight:500">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td style="font-size:large;font-weight:500">
+                @Html.DisplayFor(modelItem => item.TitleJob)
+            </td>
+            <td style="font-size:large;font-weight:500">
+                @item.dateTime.ToShortDateString()
+               
+            </td>
+            <td>
+                <img src="~/TeamImg/@item.Image" class="rounded-circle" width="40" height="40" asp-append-version="true" />
+            </td>
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TeamId" class="btn btn-primary">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.TeamId"class="btn btn-info">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.TeamId"class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

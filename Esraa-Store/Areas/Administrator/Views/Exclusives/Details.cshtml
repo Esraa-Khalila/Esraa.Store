@@ -1,0 +1,37 @@
+﻿@model Esraa_Store.Models.Exclusive
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Exclusive</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.exclusiveImg)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.exclusiveImg)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.exclusiveTilte)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.exclusiveTilte)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.exclusiveDec)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.exclusiveDec)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ExclusiveId">Edit</a> |
+    <a asp-action="Index" class="btn btn-danger">Back</a>
+</div>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Esraa_Store.Models.Exclusive>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-dark">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.exclusiveImg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.exclusiveTilte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.exclusiveDec)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="~/ExclusiveImg/@item.exclusiveImg" class="rounded-circle" width="40" height="40" asp-append-version="true" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.exclusiveTilte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.exclusiveDec)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ExclusiveId" class="btn btn-primary" >Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ExclusiveId" class="btn btn-info">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ExclusiveId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

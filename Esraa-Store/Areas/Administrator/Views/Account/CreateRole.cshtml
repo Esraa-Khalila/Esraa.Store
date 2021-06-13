@@ -1,0 +1,38 @@
+﻿@model Esraa_Store.Models.ViewModels.RoleViewModel
+@{
+    ViewData["Title"] = "CreateRole";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@{
+    ViewData["Title"] = "CreateRole";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CreateRole</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateRole" >
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RoleNmae" class="control-label"></label>
+                <input asp-for="RoleNmae" class="form-control" />
+                <span asp-validation-for="RoleNmae" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-dark" />
+                <a asp-action="Index" asp-controller="Home" class="btn btn-outline-danger">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+

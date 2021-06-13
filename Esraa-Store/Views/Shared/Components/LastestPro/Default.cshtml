@@ -1,0 +1,37 @@
+﻿@model IEnumerable<LastestPro>
+    
+
+   
+        @foreach (var Last in Model)
+        {
+            <div class="col-lg-3">
+                <div class="product-item">
+                    <div class="product-title">
+                        <a href="#">@Last.LatestProTilte</a>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <a href="product-detail.html">
+                            <img src="~/RecentImg/@Last.LatestProImg"style="height:450px" alt="Product Image">
+                        </a>
+                        <div class="product-action">
+                            <a asp-action="Buy" asp-controller="Cart" asp-route-id="@Last.LatestProId"><i class="fa fa-cart-plus"></i></a>
+                            <a asp-action="Like" asp-controller="Home"><i class="fa fa-heart">@Last.Like</i></a>
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h3><span>$</span>@Last.price</h3>
+                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        }
+      
+ 
